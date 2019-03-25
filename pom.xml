@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.jeecgframework</groupId>
-	<artifactId>jeecg</artifactId>
+	<artifactId>charity-foundation</artifactId>
 	<version>3.8</version>
 	<packaging>war</packaging>
 	
@@ -588,17 +588,17 @@
 		</dependency>
 		
 		 <!-- 插件：在线聊天 -->
-		<dependency>
-			<groupId>org.jeecgframework.p3</groupId>
-			<artifactId>jeecg-p3-biz-chat</artifactId>
-			<version>${jeecg-p3-biz-chat.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.jeecgframework.p3</groupId>
-					<artifactId>jeecg-p3-start-quick</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.jeecgframework.p3</groupId>-->
+			<!--<artifactId>jeecg-p3-biz-chat</artifactId>-->
+			<!--<version>${jeecg-p3-biz-chat.version}</version>-->
+			<!--<exclusions>-->
+				<!--<exclusion>-->
+					<!--<groupId>org.jeecgframework.p3</groupId>-->
+					<!--<artifactId>jeecg-p3-start-quick</artifactId>-->
+				<!--</exclusion>-->
+			<!--</exclusions>-->
+		<!--</dependency>-->
 		
 		<!-- 插件: 我的邮箱-->
 		<dependency>
