@@ -16,8 +16,8 @@ import org.springframework.stereotype.Component;
  * redis缓存AOP
  * @author Yandong
  */
-//@Component
-//@Aspect
+@Component
+@Aspect
 public class RedisCacheAspect {
 	
 	//TODO ?
