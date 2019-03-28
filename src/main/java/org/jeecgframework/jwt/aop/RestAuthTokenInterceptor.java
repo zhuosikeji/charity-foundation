@@ -16,6 +16,7 @@ import org.jeecgframework.jwt.model.TokenModel;
 import org.jeecgframework.jwt.service.TokenManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -42,7 +43,11 @@ public class RestAuthTokenInterceptor implements  HandlerInterceptor {
 		if(requestPath.indexOf("/rest/")==-1 || excludeUrls.contains(requestPath) ||moHuContain(excludeContainUrls, requestPath)){
 			return true;
 		}
-		
+		// 为了支持h5页面跨域访问，对options请求放行
+		if (RequestMethod.OPTIONS.name().equals(request.getMethod())
+				&& requestPath.startsWith("/rest/api")) {
+			return true;
+		}
 		//从header中得到token
 		String authHeader = request.getHeader(JwtConstants.AUTHORIZATION);
 		if (authHeader == null) {

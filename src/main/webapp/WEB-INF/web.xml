@@ -100,6 +100,11 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value>classpath*:spring-mvc.xml</param-value>
 		</init-param>
+		<!-- add by wangyong 为了支持h5页面跨域访问，对options请求放行 -->
+		<init-param>
+			<param-name>dispatchOptionsRequest</param-name>
+			<param-value>true</param-value>
+		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>

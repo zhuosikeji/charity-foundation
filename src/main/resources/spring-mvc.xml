@@ -12,7 +12,7 @@
    		http://cxf.apache.org/schemas/jaxws.xsd">
 	<!-- 自动扫描controller包下的所有类，使其认为spring mvc的控制器 -->
 	<!-- 加载controller的时候,不加载service,因为此时事物并未生效,若此时加载了service,那么事物无法对service进行拦截 -->
-	<context:component-scan base-package="org.jeecgframework.web.*,com.jeecg.*,org.jeecgframework.jwt.*">
+	<context:component-scan base-package="org.jeecgframework.web.*,com.jeecg.*,com.charityfoundation.*,org.jeecgframework.jwt.*">
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Service" />
 	</context:component-scan>
@@ -25,10 +25,10 @@
 	<bean class="org.jeecgframework.web.system.service.impl.EhcacheService"/>
 	
 	
-	<!-- Swagger支持（暂时注释掉提高平台性能，需要此功能，可以放开注释）
+	<!-- Swagger支持（暂时注释掉提高平台性能，需要此功能，可以放开注释）-->
 	<context:component-scan base-package="springfox"/>
 	<bean class="org.jeecgframework.core.swagger.SwaggerConfig" /> 
-	<mvc:resources mapping="/swagger/**" location="/swagger/" cache-period="31556926" />  -->
+	<mvc:resources mapping="/swagger/**" location="/swagger/" cache-period="31556926" />
 	 	
 	 
 	<!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
@@ -139,6 +139,8 @@
 				<property name="excludeContainUrls">
 					<list>
 						<value>/rest/tokens</value>
+
+						<value>/api/v1/demoController/searchAll</value>
 					</list>
 				</property>
 			</bean>

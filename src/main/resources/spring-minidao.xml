@@ -18,11 +18,11 @@
 		<!-- 格式化sql -->
 		<property name="formatSql" value="false"></property>
 		<!-- 输出sql -->
-		<property name="showSql" value="false"></property>
+		<property name="showSql" value="true"></property>
 		<!-- 数据库类型  mysql/postgresql/oracle/sqlserver -->
 		<property name="dbType" value="mysql"></property>
 		<!-- dao地址,配置符合spring方式 -->
-		<property name="basePackage" value="org.jeecgframework.web,com.jeecg"></property>
+		<property name="basePackage" value="org.jeecgframework.web,com.jeecg,com.charityfoundation"></property>
 		<!-- 使用的注解,默认是Minidao,推荐 Repository-->
 		<property name="annotation" value="org.springframework.stereotype.Repository"></property>
 	</bean>

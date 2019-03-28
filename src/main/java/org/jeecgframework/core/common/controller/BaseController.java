@@ -9,8 +9,10 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -106,5 +108,21 @@ public class BaseController {
 
         return result;
     }
-	
+
+	/**
+	 * add by wangyong
+	 * 为了支持H5页面跨域访问，对options请求统一进行处理
+	 */
+	@RequestMapping(method = RequestMethod.OPTIONS, value = "/**")
+	public void commonOptions(HttpServletResponse theHttpServletResponse) {
+		theHttpServletResponse.addHeader("Access-Control-Allow-Origin", "*");
+		theHttpServletResponse.addHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+		theHttpServletResponse.addHeader("Access-Control-Allow-Headers", "content-type,X-AUTH-TOKEN");
+	}
+
+    public void addResponseHead(HttpServletResponse response) {
+        response.addHeader("Access-Control-Allow-Origin", "*");
+        response.addHeader("Access-Control-Allow-Methods", "GET,POST");
+    }
+
 }
