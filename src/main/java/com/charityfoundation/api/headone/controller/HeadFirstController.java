@@ -21,10 +21,10 @@ import java.util.Map;
 /**
  * 一、获取导航栏一级分类
  */
-@Api(value = "articleApi", tags = "articleApiController")
+@Api(value = "Head_First_Api", tags = "Head_First_ApiController")
 @Controller
 @RequestMapping("/api/v1/getFirstClassName")
-public class ArticleController {
+public class HeadFirstController {
 
     @Autowired
     private HeadoneDao article1Dao;
