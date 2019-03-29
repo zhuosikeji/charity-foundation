@@ -37,7 +37,7 @@ public class DemoController extends BaseController{
   public AjaxJson searchAll(HttpServletResponse response) {
     logger.info("查询全部");
     this.addResponseHead(response);
-
+    Map<String,Object> resultMap = new HashMap<>();
     AjaxJson result = new AjaxJson();
 
     Map<String, Object> map = new HashMap<>(16);
